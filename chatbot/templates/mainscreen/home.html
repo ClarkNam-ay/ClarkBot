@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home - BISU Chatbot</title>
+  </head>
+  <body>
+    <h1>Home Page Ni Clark</h1>
+
+    {% if user.is_authenticated %}
+  <p>Welcome, {{ user.get_full_name }}!</p>
+  <p>Email: {{ user.email }}</p>
+  <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+  <p>You are not logged in.</p>
+  <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+{% endif %}
+
+  </body>
+</html>

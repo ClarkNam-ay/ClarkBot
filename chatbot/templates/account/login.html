@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClarkBot</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'logincss/login.css' %}">
+    <link rel="shortcut icon" href="{% static '/Chatbot.png' %}" type="image/x-icon">
+</head>
+<body style="margin: 0; padding: 0; background-image: linear-gradient(rgba(0, 0, 35, 0.5), rgba(0, 0, 35, 0.5)), url('{% static '/bisu-bg.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh;">
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="{% static '/Chatbot.png' %}" alt="Logo">
+            </div>
+            <!-- <h1>BISU Chatbot</h1> -->
+            <h2>Welcome Back</h2>
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="google-login-button">
+                    <img src="{% static '/google.png' %}" alt="Google Logo" class="google-logo">
+                    Login with Google</a>
+                <p>Don't have an account? <a href="https://accounts.google.com/signup" target="_blank">Signup</a></p>
+        </div>
+    </div>
+</body>
+</html>
